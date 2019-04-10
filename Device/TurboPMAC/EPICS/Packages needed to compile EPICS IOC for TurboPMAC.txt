@@ -1,0 +1,9 @@
+epics-dev
+epics-synapps-dev
+libpmacasyn3.10=3.10.12-4
+epics-pmacasyn-dev=3.10.12-4
+libpmaccoord1.11=1.11-2
+epics-pmaccoord-dev=1.11-2
+epics-pmacutil-dev
+epics-iocstats
+epics-iocstats-dev

@@ -1,0 +1,48 @@
+# Digital interface commands for hei-Flow Precision
+
+
+getStat {
+    out "LED$1?";
+    in  "LED=%04d";
+
+disp {
+    out "DSP?";
+    in  "DSP=%d";
+}
+
+selFuncKey {
+    out "TA$1!";
+}
+
+setIntPause {
+    out "SP$1=%d!";
+}
+
+flowmlRespUl {
+    out "SMM=%d!";
+}
+
+setRotRpm {
+    out "SDZ=%d!";
+}
+
+volDos {
+    out "SDM=%d!";
+}
+
+setInnTube{
+    out "SSD=%d!";
+    in  "";
+}
+
+cmdSucc {
+    in  "OK";
+}
+
+cmdFail {
+    in  "ERROR";
+}
+
+dosCmplt {
+    in  "PO";
+}
