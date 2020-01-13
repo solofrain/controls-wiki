@@ -1,0 +1,42 @@
+# Database for setting auto tune/adaptive tune
+
+# Set adaptive tune trigger level
+record(ao, "$(Sys)$(Dev)TrigLvl:AdpTune-SP") {
+  field(DESC, "Adaptive Tune Trigger Level Set")
+  field(DTYP, "stream")
+  field(FLNK, "$(Sys)$(Dev)TrigLvl:AdpTune-RB")
+  field(OUT, "@eurotherm2k.proto writeint($(GAD),$(LAD),TR,$(Sys)$(Dev)) $(PORT)")
+  field(PREC, "0")
+  field(VAL, "28")
+  field(PINI, "NO")
+  field(SDIS, "$(Sys)$(Dev)Dsbl-Cmd")
+}
+
+# Read adaptive tune trigger level
+record(ai, "$(Sys)$(Dev)TrigLvl:AdpTune-RB") {
+  field(DESC, "Adaptive Tune Trigger Level Readback")
+  field(DTYP, "stream")
+  field(INP, "@eurotherm2k.proto read($(GAD),$(LAD),TR) $(PORT)")
+  field(PREC, "0")
+  field(PINI, "NO")
+  field(SDIS, "$(Sys)$(Dev)Dsbl-Cmd")
+}
+
+# Adaptive tune command
+record(stringout, "$(Sys)$(Dev)Cmd:AdpTune-Cmd") {
+  field(DESC, "Adaptive Tune Command")
+  field(DTYP, "stream")
+  field(OUT, "@eurotherm2k.proto writeint($(GAD),$(LAD),TR,$(Sys)$(Dev)) $(PORT)")
+  field(PINI, "NO")
+  field(SDIS, "$(Sys)$(Dev)Dsbl-Cmd")
+}
+
+# Autotune command
+record(stringout, "$(Sys)$(Dev)Cmd:AutoTune-Cmd") {
+  field(DESC, "Autotune Command")
+  field(DTYP, "stream")
+  field(OUT, "@eurotherm2k.proto writeint($(GAD),$(LAD),TR,$(Sys)$(Dev)) $(PORT)")
+  field(PINI, "NO")
+  field(SDIS, "$(Sys)$(Dev)Dsbl-Cmd")
+}
+

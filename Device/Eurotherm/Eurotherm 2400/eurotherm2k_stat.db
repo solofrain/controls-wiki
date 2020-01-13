@@ -1,0 +1,27 @@
+# Status
+record(ai, "$(Sys)$(Dev)Sts") {
+  field(DESC, "Status")
+  field(DTYP, "stream")
+  field(INP, "@eurotherm2k.proto readhex($(GAD),$(LAD),SO,$(Sys)$(Dev)) $(PORT)")
+  field(SCAN, "1 second")
+  field(PINI, "YES")
+}
+
+# Mask to get field status
+record(ao, ""$(Sys)$(Dev)$(Fld)-Msk")
+  field(DESC, "Status Field Mask")
+}
+
+# Field status
+record(calc, "$(Sys)$(Dev)$(Fld)-CalcSts") {
+  field(DESC, "Autotune Status")
+  field(DTYP, "stream")
+  field(INPA, "$(Sys)$(Dev)Sts")
+  field(INPB, "$(Sys)$(Dev)$(Fld)-Msk")
+  field(CALC, "A&B#0")
+  field(FLNK, "$(Sys)$(Dev)$(Fld)-Sts")
+}
+
+record(mbbi, "$(Sys)$(Dev)$(Fld)-Sts") {
+  field(INPA, "@$(Sys)$(Dev)$(Fld)-CalcSts")
+}

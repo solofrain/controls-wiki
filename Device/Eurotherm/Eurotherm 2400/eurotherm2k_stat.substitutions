@@ -1,0 +1,19 @@
+file db/eurotherm2k_stat.db
+{
+pattern 
+{ Sys             , Dev        , Fld             , VAL    , ZNAM                    ,  ONAM                   }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "Alarm1"        , "1"    , "Safe"                  , "Alarm"                 }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "Alarm2"        , "2"    , "Safe"                  , "Alarm"                 }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "Alarm3"        , "4"    , "Safe"                  , "Alarm"                 }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "Alarm4"        , "8"    , "Safe"                  , "Alarm"                 }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "ManMode"       , "18"   , "Auto"                  , "Manual"                }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "Sensor"        , "32"   , "Good PV"               , "Sensor Broken"         }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "Loop"          , "64"   , "Good Closed Loop"      , "Open Loop"             }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "Heater"        , "128"  , "No Fault"              , "Load Fault Detected"   }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "AutoTune"      , "256"  , "Auto Tune Disabled"    , "Auto Tune Enabled"     }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "RampProg"      , "512"  , "Running/Reset"         , "Complete"              }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "PvRange"       , "1024" , "PV Within Table Range" , "PV Out of Table Range" }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "DcCtrl"        , "2048" , "Good"                  , "Bad"                   }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "ProgSegSyn"    , "4096" , "Waiting"               , "Running"               }
+{ "XF:28IDC-ES:1" , "{Env:04}" , "RemInpSensor"  , "8192" , "Good"                  , "Bad"                   }
+}
